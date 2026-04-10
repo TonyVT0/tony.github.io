@@ -34,5 +34,3 @@ His research focuses on **TinyML** and **hardware-aware neural architecture sear
 He has a passion for technology, education, and the environment.
 
 📍 Research Computing · Engineering Technology · Cullen College of Engineering · University of Houston
-
-📄 [Curriculum Vitae]({{ '/assets/pdf/CV.pdf' | relative_url }}) · [Business Card]({{ '/assets/pdf/business.pdf' | relative_url }})
