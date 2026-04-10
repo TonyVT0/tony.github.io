@@ -69,4 +69,9 @@ nav_order: 5
 
 ## AI tools
 
-- ChatGPT (OpenAI), Gemini (Google), Claude (Anthropic), Cursor (Anysphere), NotebookLM (Google), DeepSeek (DeepSeek)
+- ChatGPT (OpenAI)
+- Gemini (Google)
+- Claude (Anthropic)
+- Cursor (Anysphere)
+- NotebookLM (Google)
+- DeepSeek (DeepSeek)
