@@ -9,7 +9,14 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/tony.github.io/";
     },
-  },{id: "nav-publications",
+  },{id: "nav-news",
+          title: "News",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/tony.github.io/news/";
+          },
+        },{id: "nav-publications",
           title: "Publications",
           description: "Publications in reverse chronological order. Author names in bold indicate Tony Tran.",
           section: "Navigation",
