@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: A collection of academic, research, and embedded engineering projects in reverse chronological order.
+description: A collection of academic, research, and embedded engineering projects.
 nav: true
 nav_order: 3
 horizontal: false

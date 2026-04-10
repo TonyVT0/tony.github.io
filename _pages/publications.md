@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Publications in reverse chronological order. Author names in <strong>bold</strong> indicate Tony Tran.
+description: Author names in <strong>bold</strong> indicate Tony Tran.
 nav: true
 nav_order: 2
 ---

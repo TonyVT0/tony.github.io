@@ -60,12 +60,13 @@ nav_order: 5
 
 ## Tools / IDEs / EDA
 
-- Git, Linux, Bash
-- VS Code, Overleaf, Eclipse
-- Arduino IDE, STM32CubeIDE, Keil µVision
-- NI LabVIEW, NI Multisim
-- AutoCAD, Intel Quartus Prime, ModelSim
-- Lambda GPU Cloud
+- **Version control & shell** — Git, Linux, Bash
+- **Editors & writing** — VS Code, Overleaf, Eclipse
+- **Embedded IDEs** — Arduino IDE, STM32CubeIDE, Keil µVision
+- **National Instruments** — NI LabVIEW, NI Multisim
+- **FPGA / EDA** — Intel Quartus Prime, ModelSim
+- **CAD** — AutoCAD
+- **Cloud compute** — Lambda GPU Cloud
 
 ## AI tools
 
