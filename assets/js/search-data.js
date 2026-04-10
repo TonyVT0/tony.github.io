@@ -18,14 +18,14 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "Publications",
-          description: "Publications in reverse chronological order. Author names in bold indicate Tony Tran.",
+          description: "Author names in bold indicate Tony Tran.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/tony.github.io/publications/";
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "A collection of academic, research, and embedded engineering projects in reverse chronological order.",
+          description: "A collection of academic, research, and embedded engineering projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/tony.github.io/projects/";
