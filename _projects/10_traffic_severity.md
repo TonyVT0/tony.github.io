@@ -3,8 +3,7 @@ layout: page
 title: 💥 Modeling Traffic Accident Severity in Texas
 description: Predicting traffic accident severity (2016–2023) using LightGBM, LDA, Random Forest and K-Means clustering.
 img: assets/img/traffic-severity/Figure6.png
-importance: 2
-category: ml
+importance: 3
 giscus_comments: false
 ---
 

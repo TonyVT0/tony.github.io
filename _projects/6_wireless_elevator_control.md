@@ -3,8 +3,7 @@ layout: page
 title: 🛗 Wireless Elevator Control
 description: Replacing elevator cabling with Frequency Shift Keying (FSK) modulation, custom analog circuits and stepper motors.
 img: assets/img/wireless-elevator-control/Figure3.png
-importance: 3
-category: embedded
+importance: 10
 giscus_comments: false
 ---
 

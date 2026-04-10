@@ -3,8 +3,7 @@ layout: page
 title: 🏎️ Devastating Driving Prevention Device (DDPD)
 description: A low-cost driving simulator built with NI LabVIEW, an Arduino Uno, FSRs and an ADXL335 accelerometer.
 img: assets/img/ddpd/Figure3.png
-importance: 4
-category: embedded
+importance: 11
 giscus_comments: false
 ---
 

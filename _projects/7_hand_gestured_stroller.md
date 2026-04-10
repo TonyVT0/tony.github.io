@@ -3,8 +3,7 @@ layout: page
 title: 👶 Hand-Gestured Stroller
 description: Embedded control with TM4C123 and an MPU6050 accelerometer for hands-free stroller navigation.
 img: assets/img/hand-gestured-stroller/Figure3.png
-importance: 2
-category: embedded
+importance: 9
 giscus_comments: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /coursework/
-title: coursework
+title: Coursework
 description: Selected graduate and undergraduate courses at the University of Houston.
 nav: true
 nav_order: 6

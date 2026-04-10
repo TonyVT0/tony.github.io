@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Research / Teaching Assistant · <a href="https://binhu85.github.io/team-members/">NAIL Lab</a> · University of Houston
 
@@ -35,4 +35,4 @@ He has a passion for technology, education, and the environment.
 
 📍 Research Computing · Engineering Technology · Cullen College of Engineering · University of Houston
 
-📄 [Curriculum Vitae](/assets/pdf/CV.pdf) · [Business Card](/assets/pdf/business.pdf)
+📄 [Curriculum Vitae]({{ '/assets/pdf/CV.pdf' | relative_url }}) · [Business Card]({{ '/assets/pdf/business.pdf' | relative_url }})

@@ -1,11 +1,10 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A collection of academic, research, and embedded engineering projects.
+description: A collection of academic, research, and embedded engineering projects in reverse chronological order.
 nav: true
 nav_order: 3
-display_categories: [research, ml, embedded]
 horizontal: false
 ---
 

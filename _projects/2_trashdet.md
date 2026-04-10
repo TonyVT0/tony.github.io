@@ -3,8 +3,7 @@ layout: page
 title: ♻️ TrashDet — Iterative NAS for Efficient Waste Detection
 description: A hardware-aware iterative NAS framework that brings trash detection to TinyML and microcontrollers (WACVW 2026).
 img: assets/img/trashdet/Figure1.png
-importance: 2
-category: research
+importance: 1
 giscus_comments: false
 ---
 
@@ -15,7 +14,7 @@ giscus_comments: false
 ---
 
 📄 **Paper:** [WACVW 2026 (open access)](https://openaccess.thecvf.com/content/WACV2026W/WasteVision/papers/Tran_TrashDet_Iterative_Neural_Architecture_Search_for_Efficient_Waste_Detection_WACVW_2026_paper.pdf)
-🎞️ **Slides:** [wacv2026.pdf](/assets/pdf/wacv2026.pdf)
+🎞️ **Slides:** [wacv2026.pdf]({{ '/assets/pdf/wacv2026.pdf' | relative_url }})
 ▶️ **Video:** [YouTube](https://www.youtube.com/watch?v=lOk6MGVY1E4)
 🌐 **Project page:** [nail-uh.github.io/trashdet.github.io](https://nail-uh.github.io/trashdet.github.io/)
 

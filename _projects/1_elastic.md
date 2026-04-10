@@ -3,8 +3,7 @@ layout: page
 title: 🔎 ELASTIC — Efficient Once-For-All Iterative Search for Object Detection on Microcontrollers
 description: A unified, hardware-aware NAS framework for TinyML object detection, accepted at IEEE Transactions on Computers (2026).
 img: assets/img/elastic/maxsvhn.jpg
-importance: 1
-category: research
+importance: 4
 giscus_comments: false
 ---
 

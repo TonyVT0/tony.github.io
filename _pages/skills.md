@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /skills/
-title: skills
+title: Skills
 description: Tools, frameworks, languages and platforms I work with.
 nav: true
 nav_order: 5

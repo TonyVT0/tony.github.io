@@ -3,8 +3,7 @@ layout: page
 title: 🩺 Disease Diagnosis with Deep Learning
 description: A symptom-checker built around a Dense Neural Network implemented from scratch in MATLAB.
 img: assets/img/disease-diagnosis/Figure1.png
-importance: 1
-category: ml
+importance: 8
 giscus_comments: false
 ---
 

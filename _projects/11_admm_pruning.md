@@ -3,8 +3,7 @@ layout: page
 title: ✂️ ADMM Pruning for Efficient Deep Learning
 description: Comparing ADMM-based optimization pruning against magnitude-based heuristics on lightweight CIFAR-10 models.
 img: assets/img/admm-pruning/Figure3.png
-importance: 3
-category: ml
+importance: 2
 giscus_comments: false
 ---
 

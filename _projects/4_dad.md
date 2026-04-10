@@ -3,8 +3,7 @@ layout: page
 title: 👁️ D.A.D. — Driver's Assistant with Detection
 description: Implementing YOLOv1 from scratch in PyTorch as a lightweight blind-spot monitor for visually impaired drivers.
 img: assets/img/dad/Figure4.png
-importance: 4
-category: research
+importance: 7
 giscus_comments: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
+title: Teaching
 description: Courses taught and tutored as a graduate teaching assistant and Knack tutor.
 nav: true
 nav_order: 4
