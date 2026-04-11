@@ -95,7 +95,3 @@ Under load, the motors drew approximately **12 A**, which caused thermal ineffic
 ## Conclusion
 
 The Hand-Gestured Stroller successfully proves the concept of controlling a heavy-load vehicle using MEMS accelerometers and embedded logic. Future iterations would integrate gear reduction to lower current draw and add a PID controller to smooth jerky transitions between FSM states.
-
----
-
-**Team Members:** Tony Tran, Peter Kieu, Stuart Alfafara, Zachary Nguyen.
