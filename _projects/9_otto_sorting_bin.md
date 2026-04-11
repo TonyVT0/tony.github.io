@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 🤖 Otto Sorting Bin
+title: Otto Sorting Bin
 description: Automating waste management with YOLOv8 object detection and a custom T-Bot gantry mechanism on a Jetson Nano.
 img: assets/img/otto-sorting-bin/Figure4.png
 importance: 6

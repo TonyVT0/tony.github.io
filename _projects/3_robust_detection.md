@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 🛡️ 1-Lipschitz Layers Beyond Classification
+title: 1-Lipschitz Layers Beyond Classification
 description: Exploring 1-Lipschitz layers for robust object detection on SVHN with a Tinier SSD architecture.
 img: assets/img/robust-detection/Figure6.png
 importance: 5

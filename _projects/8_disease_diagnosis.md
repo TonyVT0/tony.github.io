@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 🩺 Disease Diagnosis with Deep Learning
+title: Disease Diagnosis with Deep Learning
 description: A symptom-checker built around a Dense Neural Network implemented from scratch in MATLAB.
 img: assets/img/disease-diagnosis/Figure1.png
 importance: 8
