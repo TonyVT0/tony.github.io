@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: redirect
+redirect: https://nail-uh.github.io/elastic.github.io/
 title: ELASTIC — Efficient Once-For-All Iterative Search for Object Detection on Microcontrollers
 description: A unified, hardware-aware NAS framework for TinyML object detection, accepted at IEEE Transactions on Computers (2026).
 img: assets/img/elastic/maxsvhn.jpg

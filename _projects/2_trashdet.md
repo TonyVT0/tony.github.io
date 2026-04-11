@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: redirect
+redirect: https://nail-uh.github.io/trashdet.github.io/
 title: TrashDet — Iterative NAS for Efficient Waste Detection
 description: A hardware-aware iterative NAS framework that brings trash detection to TinyML and microcontrollers (WACVW 2026).
 img: assets/img/trashdet/Figure1.png
