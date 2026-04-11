@@ -7,49 +7,49 @@ ninja.data = [{
     title: "About",
     section: "Navigation",
     handler: () => {
-      window.location.href = "/tony.github.io/";
+      window.location.href = "/";
     },
   },{id: "nav-news",
           title: "News",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/tony.github.io/news/";
+            window.location.href = "/news/";
           },
         },{id: "nav-publications",
           title: "Publications",
           description: "Author names in bold indicate Tony Tran.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/tony.github.io/publications/";
+            window.location.href = "/publications/";
           },
         },{id: "nav-projects",
           title: "Projects",
           description: "A collection of academic, research, and embedded engineering projects.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/tony.github.io/projects/";
+            window.location.href = "/projects/";
           },
         },{id: "nav-teaching",
           title: "Teaching",
           description: "Courses taught and tutored as a graduate teaching assistant and Knack tutor.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/tony.github.io/teaching/";
+            window.location.href = "/teaching/";
           },
         },{id: "nav-skills",
           title: "Skills",
           description: "Tools, frameworks, languages and platforms I work with.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/tony.github.io/skills/";
+            window.location.href = "/skills/";
           },
         },{id: "nav-coursework",
           title: "Coursework",
           description: "Selected graduate and undergraduate courses at the University of Houston.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/tony.github.io/coursework/";
+            window.location.href = "/coursework/";
           },
         },{id: "news-i-graduate-cypress-falls-high-school-with-foundation-distinguished-high-school-diploma-summa-cum-laude",
           title: '🎓 I graduate Cypress Falls High School with Foundation Distinguished High School Diploma...',
@@ -121,57 +121,57 @@ ninja.data = [{
           title: 'Modeling Traffic Accident Severity in Texas',
           description: "Predicting traffic accident severity (2016–2023) using LightGBM, LDA, Random Forest and K-Means clustering.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/10_traffic_severity/";
+              window.location.href = "/projects/10_traffic_severity/";
             },},{id: "projects-admm-pruning-for-efficient-deep-learning",
           title: 'ADMM Pruning for Efficient Deep Learning',
           description: "Comparing ADMM-based optimization pruning against magnitude-based heuristics on lightweight CIFAR-10 models.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/11_admm_pruning/";
+              window.location.href = "/projects/11_admm_pruning/";
             },},{id: "projects-elastic-efficient-once-for-all-iterative-search-for-object-detection-on-microcontrollers",
           title: 'ELASTIC — Efficient Once-For-All Iterative Search for Object Detection on Microcontrollers',
           description: "A unified, hardware-aware NAS framework for TinyML object detection, accepted at IEEE Transactions on Computers (2026).",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/1_elastic/";
+              window.location.href = "/projects/1_elastic/";
             },},{id: "projects-trashdet-iterative-nas-for-efficient-waste-detection",
           title: 'TrashDet — Iterative NAS for Efficient Waste Detection',
           description: "A hardware-aware iterative NAS framework that brings trash detection to TinyML and microcontrollers (WACVW 2026).",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/2_trashdet/";
+              window.location.href = "/projects/2_trashdet/";
             },},{id: "projects-1-lipschitz-layers-beyond-classification",
           title: '1-Lipschitz Layers Beyond Classification',
           description: "Exploring 1-Lipschitz layers for robust object detection on SVHN with a Tinier SSD architecture.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/3_robust_detection/";
+              window.location.href = "/projects/3_robust_detection/";
             },},{id: "projects-d-a-d-driver-39-s-assistant-with-detection",
           title: 'D.A.D. — Driver&amp;#39;s Assistant with Detection',
           description: "Implementing YOLOv1 from scratch in PyTorch as a lightweight blind-spot monitor for visually impaired drivers.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/4_dad/";
+              window.location.href = "/projects/4_dad/";
             },},{id: "projects-devastating-driving-prevention-device-ddpd",
           title: 'Devastating Driving Prevention Device (DDPD)',
           description: "A low-cost driving simulator built with NI LabVIEW, an Arduino Uno, FSRs and an ADXL335 accelerometer.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/5_ddpd/";
+              window.location.href = "/projects/5_ddpd/";
             },},{id: "projects-wireless-elevator-control",
           title: 'Wireless Elevator Control',
           description: "Replacing elevator cabling with Frequency Shift Keying (FSK) modulation, custom analog circuits and stepper motors.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/6_wireless_elevator_control/";
+              window.location.href = "/projects/6_wireless_elevator_control/";
             },},{id: "projects-hand-gestured-stroller",
           title: 'Hand-Gestured Stroller',
           description: "Embedded control with TM4C123 and an MPU6050 accelerometer for hands-free stroller navigation.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/7_hand_gestured_stroller/";
+              window.location.href = "/projects/7_hand_gestured_stroller/";
             },},{id: "projects-disease-diagnosis-with-deep-learning",
           title: 'Disease Diagnosis with Deep Learning',
           description: "A symptom-checker built around a Dense Neural Network implemented from scratch in MATLAB.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/8_disease_diagnosis/";
+              window.location.href = "/projects/8_disease_diagnosis/";
             },},{id: "projects-otto-sorting-bin",
           title: 'Otto Sorting Bin',
           description: "Automating waste management with YOLOv8 object detection and a custom T-Bot gantry mechanism on a Jetson Nano.",
           section: "Projects",handler: () => {
-              window.location.href = "/tony.github.io/projects/9_otto_sorting_bin/";
+              window.location.href = "/projects/9_otto_sorting_bin/";
             },},{
       id: 'light-theme',
       title: 'Change theme to light',

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://tonyvt0.github.io/tony.github.io/sitemap.xml
+Sitemap: https://tonyvt0.github.io/sitemap.xml
