@@ -18,24 +18,27 @@ To address this, we developed the **Otto Sorting Bin**. Instead of relying on hu
 ## System architecture
 
 ### 1. Hardware design — the T-Bot mechanism
+
 We initially considered an H-Bot design (X, Y and Z planes) but opted for a **T-Bot**: it restricts movement to the X–Y plane but significantly reduces hardware complexity and cost.
 
 The system is powered by an **NVIDIA Jetson Nano**, which handles image processing and decision logic. It communicates via GPIO with motor drivers controlling NEMA 17 stepper motors for the gantry, and an Arduino controlling servo motors for the claw mechanism.
 
 ![Hardware block diagram]({{ '/assets/img/otto-sorting-bin/Figure1.png' | relative_url }})
 
-*Figure 1: Hardware communication flow between the Jetson Nano, stepper drivers and Arduino.*
+_Figure 1: Hardware communication flow between the Jetson Nano, stepper drivers and Arduino._
 
 ### 2. The vision model: YOLOv8n
+
 For the "eyes" of the system, we used **YOLOv8n (Nano)** — chosen specifically for its efficiency on edge devices like the Jetson Nano. The model was fine-tuned on a custom dataset to detect specific trash and recyclable items within the bin's environment.
 
 ![YOLOv8 detection results]({{ '/assets/img/otto-sorting-bin/Figure2.png' | relative_url }})
 
-*Figure 2: Custom YOLOv8 detection identifying recyclables in the bin environment.*
+_Figure 2: Custom YOLOv8 detection identifying recyclables in the bin environment._
 
 ## Algorithm and logic
 
 ### 1. Coordinate mapping
+
 A major challenge in robotics is translating camera pixels into physical motor steps. We implemented a linear mapping equation to convert target pixel coordinates $$(t)$$ into the stepper motor's step coordinates $$(x, y)$$.
 
 For the X-axis mapping:
@@ -45,6 +48,7 @@ $$MaxSteps_x = m \cdot t + b \implies m = \frac{MaxSteps_x - b}{t}$$
 Here, $$m$$ is the conversion factor and $$b$$ represents the bias (offset) required to align the claw's pressure point with the object.
 
 ### 2. The X-Min search algorithm
+
 Because the T-Bot operates on a restricted plane, the claw cannot "jump" over objects; it must navigate around them or prioritize accessible items. The **X-Min algorithm**:
 
 1. **Sense** — capture a frame and detect all objects.
@@ -54,22 +58,24 @@ Because the T-Bot operates on a restricted plane, the claw cannot "jump" over ob
 
 ![Main sorting flowchart]({{ '/assets/img/otto-sorting-bin/Figure3.png' | relative_url }})
 
-*Figure 3: Logic flow from initialization to object sensing and sorting.*
+_Figure 3: Logic flow from initialization to object sensing and sorting._
 
 ## Implementation results
 
 ### Cost
+
 By using wood for the chassis, 3D-printed parts for the claw and mounts, and a T-Bot configuration, total build cost was approximately **$246**:
 
-| Component | Cost ($) |
-| :--- | :---: |
-| Jetson Nano | 50.00 |
-| Wood & chassis | 65.00 |
-| Motors & drivers | 34.00 |
-| Aluminum C-channel | 34.04 |
-| **Total** | **246.04** |
+| Component          |  Cost ($)  |
+| :----------------- | :--------: |
+| Jetson Nano        |   50.00    |
+| Wood & chassis     |   65.00    |
+| Motors & drivers   |   34.00    |
+| Aluminum C-channel |   34.04    |
+| **Total**          | **246.04** |
 
 ### Prototype performance
+
 The final prototype:
 
 1. Initializes and calibrates the gantry system.
@@ -79,7 +85,7 @@ The final prototype:
 
 ![Final prototype build]({{ '/assets/img/otto-sorting-bin/Figure4.png' | relative_url }})
 
-*Figure 4: The fully constructed Otto Sorting Bin prototype.*
+_Figure 4: The fully constructed Otto Sorting Bin prototype._
 
 ### Demo
 
@@ -95,4 +101,4 @@ The final prototype:
 
 The Otto Sorting Bin proves that automated waste segregation is feasible using accessible hardware and modern computer vision. Future improvements include adding a "dump" mechanism for clearing the entire tray, upgrading to wireless battery power, and expanding the dataset.
 
-🏆 *1st Place — Senior Project Lab (ELET 4208), Cullen College of Engineering, University of Houston.*
+🏆 _1st Place — Senior Project Lab (ELET 4208), Cullen College of Engineering, University of Houston._

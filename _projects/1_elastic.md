@@ -16,4 +16,4 @@ giscus_comments: false
 💻 **Code:** [github.com/NAIL-UH/ELASTIC](https://github.com/NAIL-UH/ELASTIC)
 🌐 **Project page:** [nail-uh.github.io/elastic.github.io](https://nail-uh.github.io/elastic.github.io/)
 
-*Accepted at IEEE Transactions on Computers, 2026.*
+_Accepted at IEEE Transactions on Computers, 2026._

@@ -92,6 +92,7 @@ jobs:
           echo "🔧 Git configured."
 
       - name: Commit and push if changed
+        if: steps.after.outputs.sha_after != 'none' && steps.before.outputs.sha_before != steps.after.outputs.sha_after
         run: |
           git add _data/citations.yml
           git diff --staged --quiet || (

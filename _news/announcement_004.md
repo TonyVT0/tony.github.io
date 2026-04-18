@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🏆 We receive *1st Place* in Digital Systems (ELET 2303) with our project, *Digital Connect 4*.
+🏆 We receive _1st Place_ in Digital Systems (ELET 2303) with our project, _Digital Connect 4_.

@@ -1,9 +1,14 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# Known venue abbreviations used in _bibliography/papers.bib `abbr:` field.
+# See https://github.com/inukshuk/jekyll-scholar.
 
-"PhysRev":
-  url: https://journals.aps.org/
+"IEEE TC":
+  url: https://www.computer.org/csdl/journal/tc
 
-"Vision":
-  color: "#009f36"
+"WACVW":
+  url: https://openaccess.thecvf.com/WACV2026_workshops
+
+"ICRA":
+  url: https://2025.ieee-icra.org/
+
+"ICRA LBS":
+  url: https://2025.ieee-icra.org/

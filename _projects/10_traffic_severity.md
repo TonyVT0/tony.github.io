@@ -34,11 +34,11 @@ These models achieved a respectable **~77% accuracy**, but their **macro F1** wa
 
 ![LDA class separation]({{ '/assets/img/traffic-severity/Figure1.png' | relative_url }})
 
-*Figure 1: LDA 1D projection showing heavy overlap between Severity 2 and 3 — accident severity is not linearly separable.*
+_Figure 1: LDA 1D projection showing heavy overlap between Severity 2 and 3 — accident severity is not linearly separable._
 
 ![Logistic Regression feature importance]({{ '/assets/img/traffic-severity/Figure2.png' | relative_url }})
 
-*Figure 2: Feature importance for Logistic Regression. `Start_Year` and `Temperature` are strong positive predictors.*
+_Figure 2: Feature importance for Logistic Regression. `Start_Year` and `Temperature` are strong positive predictors._
 
 ## Methodology 2 — Capturing non-linearity
 
@@ -48,15 +48,16 @@ We compared **Random Forest** (bagging) with **LightGBM** (gradient boosting):
 2. **LightGBM** — top performer at **84.68%** accuracy, with non-zero predictions for minority categories.
 
 ### Feature importance shift
+
 Where linear models focused on year and temperature, LightGBM identified **geography** as dominant.
 
 ![LightGBM feature importance]({{ '/assets/img/traffic-severity/Figure3.png' | relative_url }})
 
-*Figure 3: LightGBM feature importance — `Start_Lng` and `Start_Lat` are the most significant predictors.*
+_Figure 3: LightGBM feature importance — `Start_Lng` and `Start_Lat` are the most significant predictors._
 
 ![Random Forest feature importance]({{ '/assets/img/traffic-severity/Figure4.png' | relative_url }})
 
-*Figure 4: Random Forest prioritized temporal features (Start Year) over location.*
+_Figure 4: Random Forest prioritized temporal features (Start Year) over location._
 
 ## Methodology 3 — Unsupervised clustering
 
@@ -68,20 +69,20 @@ The four clusters separated naturally by weather regime: warm/dry, high-humidity
 
 ![Elbow method curve]({{ '/assets/img/traffic-severity/Figure5.png' | relative_url }})
 
-*Figure 5: Elbow method used to select k = 4.*
+_Figure 5: Elbow method used to select k = 4._
 
 ![K-Means PCA plot]({{ '/assets/img/traffic-severity/Figure6.png' | relative_url }})
 
-*Figure 6: 4 clusters in PCA space — distinct separation of weather regimes.*
+_Figure 6: 4 clusters in PCA space — distinct separation of weather regimes._
 
 ## Results summary
 
-| Model | Accuracy | Weighted F1 | Macro F1 |
-| :--- | :---: | :---: | :---: |
-| Logistic Regression | 0.77 | 0.70 | 0.26 |
-| LDA | 0.76 | 0.70 | 0.29 |
-| Random Forest | 0.77 | 0.68 | 0.22 |
-| **LightGBM** | **0.85** | **0.83** | **0.53** |
+| Model               | Accuracy | Weighted F1 | Macro F1 |
+| :------------------ | :------: | :---------: | :------: |
+| Logistic Regression |   0.77   |    0.70     |   0.26   |
+| LDA                 |   0.76   |    0.70     |   0.29   |
+| Random Forest       |   0.77   |    0.68     |   0.22   |
+| **LightGBM**        | **0.85** |  **0.83**   | **0.53** |
 
 ## Key findings
 

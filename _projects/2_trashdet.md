@@ -19,4 +19,4 @@ giscus_comments: false
 ▶️ **Video:** [YouTube](https://www.youtube.com/watch?v=lOk6MGVY1E4)
 🌐 **Project page:** [nail-uh.github.io/trashdet.github.io](https://nail-uh.github.io/trashdet.github.io/)
 
-*Presented at WASTEVISION Workshop, IEEE/CVF WACV 2026, Tucson, AZ.*
+_Presented at WASTEVISION Workshop, IEEE/CVF WACV 2026, Tucson, AZ._

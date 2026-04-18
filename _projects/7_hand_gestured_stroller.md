@@ -18,6 +18,7 @@ Our team developed the Hand-Gestured Stroller. Instead of a physical handle, the
 ## System architecture
 
 ### 1. Hardware configuration
+
 - **Master controller:** TM4C123GXL (ARM Cortex-M4)
 - **Sensor:** MPU6050 (3-axis accelerometer + gyroscope)
 - **Actuation:** 2× Noyito 170 W high-power H-bridge motor drivers
@@ -26,15 +27,17 @@ Our team developed the Hand-Gestured Stroller. Instead of a physical handle, the
 
 ![Hardware schematic diagram]({{ '/assets/img/hand-gestured-stroller/Figure1.png' | relative_url }})
 
-*Figure 1: Schematic showing connections between the TM4C123, MPU6050 and H-bridge drivers.*
+_Figure 1: Schematic showing connections between the TM4C123, MPU6050 and H-bridge drivers._
 
 ### 2. Communication protocols
+
 1. **I2C** — between the TM4C123 and MPU6050. The microcontroller reads the X/Y/Z acceleration registers at 1 kHz.
 2. **PWM** — controls the speed and direction of the DC motors via the H-bridges.
 
 ## Methodology
 
 ### 1. Finite state machine
+
 The control logic is implemented as an FSM. The accelerometer outputs raw data ranging 0g–4g. We map specific threshold ranges to five distinct states: **STOP, DRIVE, REVERSE, LEFT, RIGHT**.
 
 $$
@@ -52,9 +55,10 @@ Any reading outside these "safe zones" defaults the system to STOP for safety.
 
 ![Finite state machine diagram]({{ '/assets/img/hand-gestured-stroller/Figure2.png' | relative_url }})
 
-*Figure 2: FSM determining motor output based on sensor input.*
+_Figure 2: FSM determining motor output based on sensor input._
 
 ### 2. PWM calculation
+
 We configured a 50 Hz PWM frequency. The load value for the countdown timer is
 
 $$
@@ -64,11 +68,13 @@ $$
 With a 16 MHz clock and the default divisor, this lets us set precise duty cycles for differential steering and straight-line driving.
 
 ### 3. Debugging with UART
+
 The TM4C123 has no native serial monitor for runtime debugging, so we bridged TX→RX to an Arduino Uno and used the Arduino IDE Serial Monitor to troubleshoot sensor noise and logic errors.
 
 ## Results
 
 ### Prototype performance
+
 The final prototype successfully:
 
 1. Initializes I2C and calibrates the MPU6050.
@@ -77,13 +83,14 @@ The final prototype successfully:
 
 ![Final prototype build]({{ '/assets/img/hand-gestured-stroller/Figure3.png' | relative_url }})
 
-*Figure 3: The assembled Hand-Gestured Stroller prototype.*
+_Figure 3: The assembled Hand-Gestured Stroller prototype._
 
 ### Demo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6kuJ8ttrmO0" title="Hand-Gestured Stroller demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Power analysis
+
 Under load, the motors drew approximately **12 A**, which caused thermal inefficiency and fast battery drain — largely due to the direct-drive configuration lacking gear reduction.
 
 ## Key findings

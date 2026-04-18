@@ -1,6 +1,6 @@
 ---
 ---
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
   <head>
     <meta charset="utf-8">
@@ -8,9 +8,13 @@
     <meta http-equiv="refresh" content="0; url={{ page.redirect }}">
     <link rel="canonical" href="{{ page.redirect }}">
     <meta name="robots" content="noindex">
-    <script>window.location.replace({{ page.redirect | jsonify }});</script>
+    <script>
+      window.location.replace({{ page.redirect | jsonify }});
+    </script>
   </head>
   <body>
-    <p>Redirecting to <a href="{{ page.redirect }}">{{ page.redirect }}</a>…</p>
+    <p>
+      Redirecting to <a href="{{ page.redirect }}">{{ page.redirect }}</a>…
+    </p>
   </body>
 </html>

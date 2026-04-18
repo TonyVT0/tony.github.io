@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎓 I graduate Cypress Falls High School with Foundation Distinguished High School Diploma (*Summa Cum Laude*).
+🎓 I graduate Cypress Falls High School with Foundation Distinguished High School Diploma (_Summa Cum Laude_).

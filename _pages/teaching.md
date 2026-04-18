@@ -9,10 +9,10 @@ nav_order: 4
 
 ## UH Teaching Assistant
 
-- **ELET 4397** — AI in Robotics *(Spring 2026)*
-- **ELET 3425** — Embedded Systems *(Fall 2024, Spring 2025)*
-- **ELET 3403** — Sensor Applications *(Fall 2024, Spring 2025)*
-- **ELET 2300** — Introduction to C++ Programming *(Fall 2024)*
+- **ELET 4397** — AI in Robotics _(Spring 2026)_
+- **ELET 3425** — Embedded Systems _(Fall 2024, Spring 2025)_
+- **ELET 3403** — Sensor Applications _(Fall 2024, Spring 2025)_
+- **ELET 2300** — Introduction to C++ Programming _(Fall 2024)_
 
 ## Knack Tutor
 
@@ -22,4 +22,4 @@ nav_order: 4
 - **PHYS 1301** — College Physics I
 - **PHYS 1101** — College Physics I (Lab)
 
-⭐⭐⭐⭐⭐ **5.0 / 5.0** — *31 ratings*
+⭐⭐⭐⭐⭐ **5.0 / 5.0** — _31 ratings_

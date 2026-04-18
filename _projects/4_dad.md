@@ -18,6 +18,7 @@ This project mitigates that risk by developing a detection system that alerts dr
 ## Methodology
 
 ### 1. The algorithm: YOLOv1 from scratch
+
 Unlike multi-stage detectors that use region proposal networks, YOLO frames object detection as a single regression problem. We implemented YOLOv1 from scratch to ensure a deep understanding of the architecture and to optimize it for our specific use case.
 
 The model divides an input image into an $$S \times S$$ grid. If the center of an object falls into a grid cell, that cell is responsible for detecting it. The network predicts bounding boxes $$B$$, confidence scores, and class probabilities simultaneously.
@@ -29,6 +30,7 @@ $$Loss = \sum_{i=0}^{S^2} \text{CoordError} + \text{IoUError} + \text{ClassError
 We rigorously handled the encoding and decoding of bounding boxes to map predictions from the $$7 \times 7$$ grid format back to the $$XYXY$$ format required for visualization.
 
 ### 2. Lightweight architecture
+
 Efficiency was a primary goal. While standard detection models are often massive, our custom implementation focuses on minimizing parameter count without sacrificing utility.
 
 - **Total parameters:** 1.3 million
@@ -39,9 +41,10 @@ This compact size makes D.A.D. highly suitable for embedded devices used in auto
 
 ![YOLO architecture diagram]({{ '/assets/img/dad/Figure1.png' | relative_url }})
 
-*Figure 1: The custom YOLO architecture designed for the project.*
+_Figure 1: The custom YOLO architecture designed for the project._
 
 ### 3. Object-oriented design
+
 To ensure scalability and maintainability, the project relies heavily on OOP principles. The codebase is modularized into distinct responsibilities:
 
 - **`dataset.py`** — handles complex data loading, combining VOC2007 and VOC2012, and parsing XML annotations.
@@ -59,22 +62,24 @@ To ensure scalability and maintainability, the project relies heavily on OOP pri
 ## Results
 
 ### Training convergence
+
 We trained the model for 300 epochs. The loss curves demonstrate that the model successfully converged.
 
 ![Training and validation loss]({{ '/assets/img/dad/Figure2.png' | relative_url }})
 
-*Figure 2: Training vs. validation loss over 300 epochs.*
+_Figure 2: Training vs. validation loss over 300 epochs._
 
 ![Training and validation accuracy]({{ '/assets/img/dad/Figure3.png' | relative_url }})
 
-*Figure 3: Mean Average Precision (mAP) increasing over time.*
+_Figure 3: Mean Average Precision (mAP) increasing over time._
 
 ### Inference capabilities
+
 **Static inference:** the model successfully detects and classifies vehicles in standalone images with high confidence scores. The NMS implementation effectively removes duplicate boxes.
 
 ![Single image detection results]({{ '/assets/img/dad/Figure4.png' | relative_url }})
 
-*Figure 4: Single-image inference on Bus, Car, Motorbike, and Bicycle.*
+_Figure 4: Single-image inference on Bus, Car, Motorbike, and Bicycle._
 
 **Live inference:** we connected the model to a live webcam feed to simulate a driver's perspective. While we encountered an OpenCV display bug that prevented bounding boxes from rendering on the live stream, the CLI successfully output correct class predictions and confidence scores in real time.
 

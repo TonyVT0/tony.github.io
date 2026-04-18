@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🏆 We receive *1st Place* in Senior Project Lab (ELET 4208) with our project, [Otto Sorting Bin]({{ '/projects/9_otto_sorting_bin/' | relative_url }}). [[Video]](https://youtu.be/jShU_pcXrUc)
+🏆 We receive _1st Place_ in Senior Project Lab (ELET 4208) with our project, [Otto Sorting Bin]({{ '/projects/9_otto_sorting_bin/' | relative_url }}). [[Video]](https://youtu.be/jShU_pcXrUc)

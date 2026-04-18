@@ -13,16 +13,18 @@
       {% else %}
         {% assign news_limit = news_size %}
       {% endif %}
-      {% assign current_year = "" %}
+      {% assign current_year = '' %}
       {% for item in news limit: news_limit %}
         {% assign item_year = item.date | date: '%Y' %}
         {% if item_year != current_year %}
           {% unless forloop.first %}
-            </tbody></table>
+            </tbody>
+            </table>
           {% endunless %}
           <h3 class="news-year mt-4">{{ item_year }}</h3>
-          <table class="table table-sm table-borderless"><tbody>
-          {% assign current_year = item_year %}
+          <table class="table table-sm table-borderless">
+            <tbody>
+              {% assign current_year = item_year %}
         {% endif %}
         <tr>
           <th scope="row" style="width: 20%">{{ item.date | date: '%B %Y' }}</th>
@@ -35,8 +37,9 @@
           </td>
         </tr>
       {% endfor %}
-      {% if current_year != "" %}
-        </tbody></table>
+      {% if current_year != '' %}
+        </tbody>
+        </table>
       {% endif %}
     </div>
   {% else %}

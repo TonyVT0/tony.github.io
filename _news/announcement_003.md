@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🏆 We receive *2nd Place* in Digital Systems Lab (ELET 2103) with our project, *Car Door Alarm System*.
+🏆 We receive _2nd Place_ in Digital Systems Lab (ELET 2103) with our project, _Car Door Alarm System_.

@@ -18,6 +18,7 @@ This project implements **ADMM-based pruning** on lightweight architectures (Mob
 ## Methodology
 
 ### 1. Heuristic — magnitude-based pruning
+
 Magnitude pruning assumes that weights with the smallest absolute values contribute the least. The objective is to minimize the loss function $$f(W)$$ subject to a cardinality constraint:
 
 $$\min f(W) \quad \text{s.t.} \quad \text{card}(W) \le l$$
@@ -25,6 +26,7 @@ $$\min f(W) \quad \text{s.t.} \quad \text{card}(W) \le l$$
 where $$l$$ is the target number of non-zero weights. This method enforces hard constraints by simply pruning weights after every step.
 
 ### 2. Optimization — ADMM-based pruning
+
 ADMM formulates pruning as a constrained optimization problem. We introduce an auxiliary variable $$Z$$ and an indicator function $$g(Z)$$ that enforces the sparsity set $$S$$:
 
 $$\min_{W} f(W) + g(Z) \quad \text{s.t.} \quad W = Z$$
@@ -51,32 +53,34 @@ We validated experiments using **CIFAR-10** on three modern lightweight architec
 ## Results
 
 ### Training convergence
+
 ADMM exhibited higher training loss and slower convergence compared to the baseline, indicating the difficulty of optimization under strict sparsity constraints.
 
 ![Training objective and validation accuracy]({{ '/assets/img/admm-pruning/Figure1.png' | relative_url }})
 
-*Figure 1: Training objective and validation accuracy.*
+_Figure 1: Training objective and validation accuracy._
 
 ### Accuracy comparison
 
-| Model | Method | Pre-pruning Acc (%) | Post-pruning Acc (%) |
-| :--- | :--- | :---: | :---: |
-| **MobileNetV2** | Base | 10.00 | **70.60** |
-|  | ADMM | 80.66 | 67.10 |
-| **MobileNetV3-Small** | Base | 48.33 | 64.57 |
-|  | ADMM | 72.47 | 68.48 |
-| **MobileNetV3-Large** | Base | 35.97 | 35.97 |
-|  | ADMM | 85.06 | 60.13 |
+| Model                 | Method | Pre-pruning Acc (%) | Post-pruning Acc (%) |
+| :-------------------- | :----- | :-----------------: | :------------------: |
+| **MobileNetV2**       | Base   |        10.00        |      **70.60**       |
+|                       | ADMM   |        80.66        |        67.10         |
+| **MobileNetV3-Small** | Base   |        48.33        |        64.57         |
+|                       | ADMM   |        72.47        |        68.48         |
+| **MobileNetV3-Large** | Base   |        35.97        |        35.97         |
+|                       | ADMM   |        85.06        |        60.13         |
 
 For **MobileNetV2** the baseline substantially outperformed ADMM, suggesting that larger model size amplified the optimization challenge.
 
 ### Weight distributions
+
 - **Baseline** — approximately normal distribution; pruning removes weights near zero.
-- **ADMM** — many weights are driven *exactly* to zero during optimization. After pruning, the distribution becomes multimodal, suggesting a sharper separation between important and unimportant weights.
+- **ADMM** — many weights are driven _exactly_ to zero during optimization. After pruning, the distribution becomes multimodal, suggesting a sharper separation between important and unimportant weights.
 
 ![Weight distribution of ADMM method]({{ '/assets/img/admm-pruning/Figure3.png' | relative_url }})
 
-*Figure 2: Weight distribution of ADMM method showing multimodal separation.*
+_Figure 2: Weight distribution of ADMM method showing multimodal separation._
 
 ## Key findings
 

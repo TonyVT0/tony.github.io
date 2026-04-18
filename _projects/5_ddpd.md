@@ -18,6 +18,7 @@ To address this, we developed the **DDPD**. Inspired by high-end racing gear lik
 ## System architecture
 
 ### 1. Hardware design
+
 The physical build uses a "cardboard and wood" chassis to keep costs low while maintaining functionality:
 
 - **Steering** — an **ADXL335 accelerometer** mounted on a Wii Wheel acts as the steering column. It measures X-axis tilt to determine left/right direction.
@@ -27,9 +28,10 @@ The physical build uses a "cardboard and wood" chassis to keep costs low while m
 
 ![Hardware setup]({{ '/assets/img/ddpd/Figure1.png' | relative_url }})
 
-*Figure 1: The DDPD hardware setup. Top: signal-conditioning circuit. Bottom: physical chair, wheel and pedal configuration.*
+_Figure 1: The DDPD hardware setup. Top: signal-conditioning circuit. Bottom: physical chair, wheel and pedal configuration._
 
 ### 2. Signal-conditioning circuits
+
 Raw sensor data is rarely usable immediately. We implemented three signal-conditioning circuits:
 
 1. **Op-amp amplifiers** — to condition the accelerometer signals for the Arduino's 0–5V analog input range.
@@ -39,11 +41,13 @@ Raw sensor data is rarely usable immediately. We implemented three signal-condit
 ## The mathematics of sensing
 
 ### Force-sensing resistors (pedals)
+
 The FSRs decrease in resistance as force is applied. We treated the system using a linear approximation, mapping force ($$F$$) to resistance ($$R$$). Using $$F = ma$$, the operating range was between 0.196 N and 19.6 N. We use the linear equation $$R = m \cdot F + b$$, solving for the slope:
 
 $$m = \frac{\Delta R}{\Delta F}$$
 
 ### Accelerometer (steering)
+
 The ADXL335 outputs voltage based on orientation relative to gravity. We mapped the binary digital values to voltage and then to a normalized position vector ($$-1$$ to $$1$$). The minimum input voltage was approximately 1.28 V and the maximum 1.95 V. Applying a linear transformation:
 
 $$V_{out} = m \cdot V_{in} + b, \quad m = \frac{5}{1.95313 - 1.27930} \approx 7.42, \quad b \approx 9.49$$
@@ -56,9 +60,10 @@ The software core was built entirely in **NI LabVIEW**. It handles data acquisit
 
 ![LabVIEW block diagram]({{ '/assets/img/ddpd/Figure2.png' | relative_url }})
 
-*Figure 2: The LabVIEW block diagram handling logic flow and data conversion.*
+_Figure 2: The LabVIEW block diagram handling logic flow and data conversion._
 
 ### Logic flow
+
 1. **Data acquisition** — read three analog channels (Steering, Gas, Brake).
 2. **Conversion** — apply the transfer functions in real time to normalize values.
 3. **Simulation control** — if normalized X > 0.2 send "Right"; if < −0.2 send "Left". Pedal thresholds determine "Accelerate" or "Brake".
@@ -66,7 +71,7 @@ The software core was built entirely in **NI LabVIEW**. It handles data acquisit
 
 ![Front panel]({{ '/assets/img/ddpd/Figure3.png' | relative_url }})
 
-*Figure 3: Front panel of our LabVIEW code.*
+_Figure 3: Front panel of our LabVIEW code._
 
 ## Demo
 

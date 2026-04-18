@@ -11,7 +11,7 @@ giscus_comments: false
 
 ## Introduction
 
-Deep learning models are notoriously vulnerable to **adversarial attacks**, where imperceptible perturbations in input data can cause drastic failures in prediction. While research has successfully leveraged **Lipschitz continuous functions** to bound model behavior and guarantee robustness in *classification* tasks, this approach remains largely unexplored for *object detection*.
+Deep learning models are notoriously vulnerable to **adversarial attacks**, where imperceptible perturbations in input data can cause drastic failures in prediction. While research has successfully leveraged **Lipschitz continuous functions** to bound model behavior and guarantee robustness in _classification_ tasks, this approach remains largely unexplored for _object detection_.
 
 Object detection presents a unique challenge: unlike classification, which assigns a single label to an image, detection involves both **regression** (bounding boxes) and **classification** (labels) simultaneously.
 
@@ -20,6 +20,7 @@ This project implements **SDP-based 1-Lipschitz layers** within a **Tinier SSD m
 ## Methodology
 
 ### 1. The theory: Lipschitz continuity
+
 A function $$f: \mathbb{R}^n \to \mathbb{R}^m$$ is Lipschitz continuous if it satisfies:
 
 $$\|f(x) - f(y)\| \le L \|x - y\| \quad \forall x, y \in \mathbb{R}^n$$
@@ -27,15 +28,17 @@ $$\|f(x) - f(y)\| \le L \|x - y\| \quad \forall x, y \in \mathbb{R}^n$$
 Here, $$L$$ is the **Lipschitz constant**, representing the upper bound of the output change relative to the input change. By constraining $$L=1$$ (1-Lipschitz), we can theoretically guarantee that small input perturbations result in bounded output changes, ensuring stability.
 
 ### 2. The architecture: Tinier SSD
+
 We adopted the **Tinier SSD** architecture, a lightweight version of the Single Shot Detector. To integrate robustness, we replaced standard convolutional layers with **SDP-based Lipschitz layers**.
 
 A core challenge arose: 1-Lipschitz layers often require input and output channels to match, which conflicts with the expanding and contracting feature maps of a detection backbone. To remedy this, we used **Normalized Convolutional Layers** at the very start (to expand channels) and very end (to match prior boxes) of the network.
 
 ![Tinier SSD architecture with Lipschitz layers]({{ '/assets/img/robust-detection/Figure2.png' | relative_url }})
 
-*Figure 1: Tinier SSD architecture integrating Lipschitz layers with normalized entry/exit layers.*
+_Figure 1: Tinier SSD architecture integrating Lipschitz layers with normalized entry/exit layers._
 
 ### 3. Layer configurations
+
 We compared three configurations to analyze the trade-off between strict mathematical robustness and practical performance:
 
 1. **Spectral-norm-based layers** — fully 1-Lipschitz (most restrictive).
@@ -52,27 +55,28 @@ We compared three configurations to analyze the trade-off between strict mathema
 
 ### Accuracy and robustness trade-off
 
-| Configuration | Clean mAP (%) | Adversarial mAP (%) | Observations |
-| :--- | :---: | :---: | :--- |
-| **Naïve (Baseline)** | **78.79** | 42.07 | High accuracy, but severe drop under attack. |
-| **Spectral-norm** | 0.00 | 0.00 | **Infeasible.** Constraints too restrictive. |
-| **Standard Conv** | 78.67 | 58.60 | High expressiveness, generated many false positives. |
-| **L2-normalized** | 61.75 | **52.63** | Lowest accuracy drop, most consistent predictions. |
+| Configuration        | Clean mAP (%) | Adversarial mAP (%) | Observations                                         |
+| :------------------- | :-----------: | :-----------------: | :--------------------------------------------------- |
+| **Naïve (Baseline)** |   **78.79**   |        42.07        | High accuracy, but severe drop under attack.         |
+| **Spectral-norm**    |     0.00      |        0.00         | **Infeasible.** Constraints too restrictive.         |
+| **Standard Conv**    |     78.67     |        58.60        | High expressiveness, generated many false positives. |
+| **L2-normalized**    |     61.75     |      **52.63**      | Lowest accuracy drop, most consistent predictions.   |
 
 ![Naïve model results]({{ '/assets/img/robust-detection/Figure3.png' | relative_url }})
 
-*Figure 2: Naïve model — clean (left) vs. adversarial (right).*
+_Figure 2: Naïve model — clean (left) vs. adversarial (right)._
 
 ![L2-normalized results]({{ '/assets/img/robust-detection/Figure6.png' | relative_url }})
 
-*Figure 3: L2-normalized model — clean (left) vs. adversarial (right).*
+_Figure 3: L2-normalized model — clean (left) vs. adversarial (right)._
 
 ### Lipschitz constant analysis
+
 We analyzed the Lipschitz constant across layers for the "Standard Conv" configuration. The global Lipschitz constant reached ~95, driven largely by the unbounded first and last layers. Interestingly, the constant increases as the network gets deeper, particularly in the classification heads.
 
 ![Lipschitz constant analysis]({{ '/assets/img/robust-detection/Figure5.png' | relative_url }})
 
-*Figure 4: Analysis of Lipschitz constants across network layers.*
+_Figure 4: Analysis of Lipschitz constants across network layers._
 
 ## Key findings
 

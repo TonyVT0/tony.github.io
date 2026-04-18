@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎓 I graduate the University of Houston with a BS in Computer Engineering Technology (*Summa Cum Laude*) from Cullen College of Engineering and receive University Honors awarded by the Honors College at UH.
+🎓 I graduate the University of Houston with a BS in Computer Engineering Technology (_Summa Cum Laude_) from Cullen College of Engineering and receive University Honors awarded by the Honors College at UH.

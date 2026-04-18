@@ -18,12 +18,14 @@ Our team designed a wireless control system that replaces physical signal wires 
 ## System architecture
 
 ### 1. Communications protocol: FSK
+
 We chose FSK for its noise immunity over Amplitude Shift Keying (ASK):
 
 - **Logic high (1)** — high-frequency carrier (14 kHz)
 - **Logic low (0)** — low-frequency carrier (7 kHz)
 
 ### 2. Transmitter (modulator)
+
 The transmitter has two main stages: signal generation and mixing.
 
 **Wien-bridge oscillators.** We built two Wien-bridge oscillators tuned to 7 kHz and 14 kHz. Their resonant frequency is
@@ -34,9 +36,10 @@ $$f_r = \frac{1}{2\pi RC}$$
 
 ![FSK modulated waveform]({{ '/assets/img/wireless-elevator-control/Figure1.png' | relative_url }})
 
-*Figure 1: FSK modulated output. Note the distinct shift in frequency density representing binary data.*
+_Figure 1: FSK modulated output. Note the distinct shift in frequency density representing binary data._
 
 ### 3. Receiver (demodulator)
+
 Once the signal is received it must be converted back into a clean digital square wave for the microcontroller:
 
 1. **Low-pass filter** — smooths the received FSK wave into an amplitude-varying signal.
@@ -45,11 +48,12 @@ Once the signal is received it must be converted back into a clean digital squar
 
 ![Demodulated digital output]({{ '/assets/img/wireless-elevator-control/Figure2.png' | relative_url }})
 
-*Figure 2: Clean digital square wave recreated by the comparator circuit.*
+_Figure 2: Clean digital square wave recreated by the comparator circuit._
 
 ## Electromechanical design
 
 ### Motor selection
+
 We tested three motor types to drive the elevator shaft:
 
 1. **Servo motors** — rejected; back-fed noise into the FSK circuit, triggering phantom floor calls.
@@ -60,7 +64,7 @@ The stepper is driven by an L298N driver and controlled by an Arduino Mega, whic
 
 ![Full circuit diagram]({{ '/assets/img/wireless-elevator-control/Figure3.png' | relative_url }})
 
-*Figure 3: Complete schematic — transmitter, receiver and motor-driver interfaces.*
+_Figure 3: Complete schematic — transmitter, receiver and motor-driver interfaces._
 
 ## Demo
 
@@ -74,6 +78,7 @@ The stepper is driven by an L298N driver and controlled by an Arduino Mega, whic
    $$\lambda = \frac{c}{f} = \frac{3 \times 10^8}{433 \times 10^6} \approx 0.69 \text{ m} \implies \frac{0.69}{4} \approx 0.17 \text{ m}$$
 
    Adding a 17 cm wire antenna significantly improved stability.
+
 3. **Power-supply isolation.** Stepper motors create voltage dips that can reset the FSK receiver. Isolating motor power was mandatory.
 
 ## Conclusion

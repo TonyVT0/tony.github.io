@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🏆 We receive *1st Place* in Embedded Systems (ELET 3425) with our project, [Hand Gestured Stroller]({{ '/projects/7_hand_gestured_stroller/' | relative_url }}). [[Video]](https://youtu.be/6kuJ8ttrmO0)
+🏆 We receive _1st Place_ in Embedded Systems (ELET 3425) with our project, [Hand Gestured Stroller]({{ '/projects/7_hand_gestured_stroller/' | relative_url }}). [[Video]](https://youtu.be/6kuJ8ttrmO0)
