@@ -117,7 +117,7 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-elastic-efficient-once-for-all-iterative-search-for-object-detection-on-microcontrollers-has-been-accepted-by-ieee-transactions-on-computers-paper-arxiv-code",
           title: '🎉 Our paper ELASTIC: Efficient Once For All Iterative Search for Object Detection...',
           description: "",
-          section: "News",},{id: "news-i-successfully-defend-my-thesis-efficient-iterative-neural-architecture-search-for-object-detection-on-iot-devices-advised-by-professor-bin-hu-in-the-networked-autonomous-intelligent-learning-nail-lab-with-research-focus-on-efficient-tinyml-and-embedded-ai-i-published-elastic-trashdet-distributed-perception-aware-safe-leader-follower-system-via-control-barrier-methods-and-facets-and-received-an-nvidia-academic-grant-for-our-project-heterogeneous-multi-robot-waste-detection-with-conformal-runtime-monitoring-slides",
+          section: "News",},{id: "news-i-successfully-defend-my-thesis-efficient-iterative-neural-architecture-search-for-object-detection-on-iot-devices-advised-by-professor-bin-hu-in-the-networked-autonomous-intelligent-learning-nail-lab-with-research-focus-on-efficient-tinyml-and-embedded-ai-slides",
           title: '🎉 I successfully defend my thesis, Efficient Iterative Neural Architecture Search for Object...',
           description: "",
           section: "News",},{id: "projects-modeling-traffic-accident-severity-in-texas",
